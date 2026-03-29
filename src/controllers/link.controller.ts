@@ -33,7 +33,7 @@ export async function createLink(req: Request, res: Response) {
       include: { tags: true },
     });
 
-    res.json(link);
+    res.status(201).json(link);
   } catch {
     res.status(500).json({ message: 'Erro interno do servidor' });
   }
